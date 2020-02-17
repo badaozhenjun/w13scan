@@ -10,7 +10,8 @@ from colorama import Fore
 
 from W13SCAN.lib.data import Share, KB
 
-
+from W13SCAN.yuxiao.w13scan_models import BugModel
+import json
 class OutPut(object):
 
     def __init__(self):
@@ -73,6 +74,8 @@ class OutPut(object):
                 self.log(" ")
                 index += 1
         self.lock.release()
+        model = BugModel(url=url,plugin=plugin,json=json.dumps(report))
+        model.save_or_update()
 
     def log(self, msg, color=Fore.YELLOW):
         width = KB["console_width"][0]

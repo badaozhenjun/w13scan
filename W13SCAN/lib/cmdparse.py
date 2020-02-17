@@ -36,7 +36,7 @@ def cmd_line_parser(argv=None):
     #
     # target.add_argument("-f", "--file", dest="url_file", help="Scan multiple targets given in a textual file")
     target.add_argument("-s", "--server-addr", dest="server_addr",
-                        help="server addr format:(ip:port) eg:127.0.0.1:7778", default="127.0.0.1:7778")
+                        help="server addr format:(ip:port) eg:127.0.0.1:7778", default="0.0.0.0:7778")
 
     # Requests options
     request = parser.add_argument_group("Request", "Network request options")
